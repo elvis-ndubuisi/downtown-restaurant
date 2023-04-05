@@ -1,11 +1,19 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --clr-black: #151515;
+  --clr-white: #ffffff;
+  --clr-grey: #ebebe9;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --page-max-width: 1440px;
+  --section-height: 1440px;
+  --page-window-gap: 0.3rem;
+
+  font-family: "Noto Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  /* line-height: 160%; */
+  font-size: 16px;
+
+  background-color: var(--clr-white);
+  color: var(--clr-black);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,84 +22,168 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html,
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  scroll-behavior: smooth;
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+img,
+picture {
+  display: block;
+  max-width: 100%;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+button,
+a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: inherit;
+  color: currentColor;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+span,
+small {
+  font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+/* Utility Classes */
+.line {
+  display: inline-block;
+  width: 40px;
+  height: 2px;
+  border-radius: 1px;
+  background-color: var(--clr-white);
+}
+
+.dt {
+  font-size: 2.2em;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.h1 {
+  font-weight: 1.875rem;
+}
+
+/* Class Styles */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  max-width: var(--page-max-width);
+  height: 60px;
+  margin-top: 25px;
+  margin-block: auto;
+  padding-inline: var(--page-window-gap);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.index-showcase {
+  height: 100vh;
+  max-height: var(--section-height);
+  width: 100vw;
+  background-image: url("/assets/banner-min.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  color: var(--clr-white);
+}
+.index-showcase > section {
+  position: relative;
+  width: 100%;
+  height: inherit;
+  display: grid;
+  align-content: center;
+  justify-content: start;
+  padding-inline: var(--page-window-gap);
+}
+.heading {
+  font-size: 3.75rem;
+  line-height: 81.72px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  min-height: 70px;
+  position: relative;
+}
+.heading::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--clr-white);
+}
+.scroll-indicator,
+.socials {
+  position: absolute;
+  bottom: 40px;
+}
+.socials {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+  left: var(--page-window-gap);
+}
+.lined-wrapper,
+.scroll-indicator {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.75rem;
+}
+.scroll-indicator {
+  right: var(--page-window-gap);
+  writing-mode: sideways-lr;
+}
+.scroll-indicator .line {
+  height: 40px;
+  width: 2px;
+}
+.lined-wrapper {
+  margin-top: 2em;
+}
+
+.index-about,
+.index-menu {
+  min-height: var(--section-height);
+  max-width: var(--page-max-width);
+  padding-inline: var(--page-window-gap);
+  margin-inline: auto;
+}
+
+.index-menu {
+  background-color: var(--clr-black);
+  color: var(--clr-white);
 }
