@@ -44,7 +44,7 @@ export function animateIndexAbout() {
       start: "bottom center",
       end: "+=500 top",
       markers: true,
-      toggleActions: "play reverse none none",
+      toggleActions: "play none none none",
     },
   });
 
