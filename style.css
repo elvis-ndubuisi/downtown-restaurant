@@ -150,6 +150,8 @@ h6 {
 
   min-height: 70px;
   position: relative;
+  visibility: hidden;
+  opacity: 0;
 }
 .heading::after {
   position: absolute;
@@ -192,29 +194,53 @@ h6 {
   margin-top: 2em;
 }
 
-.index-about,
-.index-menu {
-  height: 100vh;
-  max-height: var(--section-height);
-}
-
 .index-about {
   max-width: var(--page-max-width);
   padding-inline: var(--page-window-gap);
   margin-inline: auto;
   margin-block: 5em;
   display: flex;
-  align-items: start;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  justify-content: center;
+}
+@media (min-width: 769px) {
+  .index-about {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 .index-about_child {
   width: 100%;
-  max-width: 675px;
+  max-width: 655px;
+  display: flex;
+  flex-direction: column;
+  gap: 4.4em;
 }
 .index-about_child .image-container {
   width: 100%;
   height: 489px;
-  background-color: red;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.index-about_child .image-container img {
+  visibility: hidden;
+}
+.index-about_child .image-container.left {
+  display: grid;
+  place-items: center;
+}
+.index-about_child .image-container.left > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--clr-black);
+  width: 45%;
+  max-width: 358px;
+  z-index: -1;
 }
 
 .index-menu {
@@ -222,6 +248,9 @@ h6 {
   color: var(--clr-white);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+.index-menu_child {
+  background-color: red;
 }
 
 .footer-content {
