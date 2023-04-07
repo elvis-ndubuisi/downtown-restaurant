@@ -130,17 +130,21 @@ h6 {
   opacity: 0.7;
 }
 
-.index-showcase {
+.index-showcase,
+.about-showcase {
   height: 100vh;
   max-height: var(--section-height);
   width: 100vw;
-  background-image: url("/assets/banner-min.png");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   color: var(--clr-white);
 }
-.index-showcase > section {
+.index-showcase {
+  background-image: url("/assets/banner-min.png");
+}
+.index-showcase > section,
+.about-showcase > section {
   position: relative;
   width: 100%;
   height: inherit;
@@ -486,4 +490,43 @@ footer #map-marker2 {
   background-color: var(--clr-black);
   padding: 0.4em;
   border-radius: 3px;
+}
+
+/* About Page */
+.about-showcase {
+  background-image: url("/assets/about/banner-about-min.png");
+}
+.about-about {
+  max-width: var(--page-max-width);
+  margin-inline: auto;
+  margin-block: 100px;
+  text-align: center;
+}
+.about-caption {
+  margin-block: 70px;
+  text-align: left;
+  max-width: 1170px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+@media (min-width: 769px) {
+  .about-caption {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.about-caption > div {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3em;
+}
+.about-img-grid01 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.about-img-grid02 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
