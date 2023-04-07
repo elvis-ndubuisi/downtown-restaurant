@@ -43,7 +43,7 @@ export function animateIndexAbout() {
       trigger: ".index-showcase",
       start: "bottom center",
       end: "+=500 top",
-      markers: true,
+      markers: false,
       toggleActions: "play none none none",
     },
   });
@@ -78,6 +78,36 @@ export function animateIndexAbout() {
       opacity: 0,
       ease: Power2.easeIn,
     });
+}
+
+export function revealNavMenu() {
+  let tl = gsap.timeline();
+
+  tl.to(".nav-menu", { duration: 0, display: "block", height: "100vh" }).from(
+    ".nav-menu",
+    {
+      duration: 0.8,
+      opacity: 0,
+      height: 0,
+      transformOrigin: "right top",
+      skewY: 2,
+      height: 0,
+      ease: Power3.easeInOut,
+    }
+  );
+}
+
+export function hideNavMenu() {
+  gsap
+    .timeline()
+    .to(".nav-menu", {
+      delay: 0.4,
+      duration: 1,
+      height: 0,
+      ease: Power3.easeOut,
+    })
+    .to(".nav-menu", { duration: 0, display: "none" })
+    .from(".nav-menu .header", { duration: 0.5, delay: -0.3, opacity: 0 });
 }
 
 function registerAnimations() {
