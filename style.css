@@ -164,7 +164,7 @@ h6 {
 
   min-height: 70px;
   position: relative;
-  visibility: hidden;
+  /* visibility: hidden; */
   opacity: 0;
 }
 .heading::after {
