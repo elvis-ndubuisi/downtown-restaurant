@@ -8,7 +8,7 @@ const blackBg = document.querySelector(".left").firstElementChild;
  * Removes ::after property to reveal content
  * @param {Element} target Index page heading <h1> tag
  */
-export function revealContentAfter(target, idArr) {
+export function revealContentAfter() {
   const tl = gsap
     .timeline({ defaults: { duration: 2, stagger: 0.3 } })
     .to(".heading", {
