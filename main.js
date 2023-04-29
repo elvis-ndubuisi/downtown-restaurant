@@ -1,7 +1,7 @@
 import "./style.css";
 import registerAnimation, {
   revealContentAfter,
-  animateIndexAbout,
+  // animateIndexAbout,
   revealNavMenu,
   hideNavMenu,
 } from "./animations";
@@ -20,7 +20,7 @@ navClose.addEventListener("click", () => hideNavMenu());
 navOpen.addEventListener("click", () => revealNavMenu());
 
 revealContentAfter();
-animateIndexAbout();
+// animateIndexAbout();
 
 console.log("first");
 
