@@ -22,8 +22,6 @@ navOpen.addEventListener("click", () => revealNavMenu());
 revealContentAfter();
 // animateIndexAbout();
 
-console.log("first");
-
 const swiper = new Swiper(".nav-menu_slider-container", {
   direction: "horizontal",
   loop: true,
