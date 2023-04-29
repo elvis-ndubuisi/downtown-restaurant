@@ -1,3 +1,7 @@
+![showcase]("/showcase.png")
+
+**[Preview Project]("https://livelink")**
+
 # **🌶️ Down Town Food Restaurant**
 
 Multi-page website bundled with `vite`. 🤦 I almost forgot what it was like before UI frameworks like `Reactjs` and `the other one`.
@@ -18,7 +22,7 @@ Multi-page website bundled with `vite`. 🤦 I almost forgot what it was like be
 
   - First solution was to fix all routing issues (🙄 vite never built other pages unless specified in `vite.config.js`)
 
-  - And 🥁....... ✨ something else
+  - And 🥁....... ✨ separated animation function into `animateAbout.js` and added it to `index.html` page.
 
 - **🤔 Vite adds `script` in htm `head`** : This could be because I loaded the styles from `main.js` instead of adding it manually to every page.
 
