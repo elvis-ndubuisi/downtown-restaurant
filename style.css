@@ -421,15 +421,25 @@ footer #map-marker2 {
   border-radius: 10px;
   overflow: hidden;
   background-color: lightgray;
-  padding: 1rem;
   scroll-snap-align: center;
   scroll-snap-stop: normal;
+  position: relative;
 }
 .nav-menu_slide-container .slider-item:first-child {
   margin-left: 50%;
 }
 .nav-menu_slide-container .slider-item:last-child {
   margin-right: 50%;
+}
+
+.slider-item .slide-caption {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 10;
+  color: white;
 }
 
 @media (max-width: 768px) {
