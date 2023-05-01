@@ -10,6 +10,18 @@ import "swiper/css";
 
 const navClose = document.getElementById("close");
 const navOpen = document.getElementById("open");
+const hoverMenus = document.querySelectorAll(".changeFocus-link");
+const sliderItems = document.querySelectorAll(".slider-item");
+
+hoverMenus.forEach((lk) => {
+  lk.addEventListener("mouseover", () => {
+    sliderItems.forEach((sl) => {
+      if (sl.id === `item-${lk.id}`) {
+        sl.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   registerAnimation();

@@ -20,6 +20,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -411,22 +412,30 @@ footer #map-marker2 {
   align-items: flex-end;
   margin-bottom: 2em;
   overflow-x: scroll;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: mandatory;
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
+  scroll-snap-type: x mandatory;
 }
 .nav-menu_slide-container .slider-item {
-  min-width: 60%;
   width: 60%;
-  flex: 1;
+  flex-shrink: 0;
   height: inherit;
   border-radius: 10px;
   overflow: hidden;
   background-color: lightgray;
   padding: 1rem;
+  scroll-snap-align: center;
+  scroll-snap-stop: normal;
 }
+.nav-menu_slide-container .slider-item:first-child {
+  margin-left: 50%;
+}
+.nav-menu_slide-container .slider-item:last-child {
+  margin-right: 50%;
+}
+
 @media (max-width: 768px) {
+  .nav-menu_slide-container {
+    gap: 1.5em;
+  }
   .nav-menu_slide-container .slider-item {
     min-width: 80%;
     width: 80%;
