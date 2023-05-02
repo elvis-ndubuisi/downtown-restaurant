@@ -107,6 +107,14 @@ h6 {
   padding-block: 0.4em;
 }
 
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* Class Styles */
 .header {
   position: absolute;
