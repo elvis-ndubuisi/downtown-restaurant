@@ -1,8 +1,8 @@
-![showcase]("/showcase.png")
-
-**[Preview Project]("https://livelink")**
-
 # **🌶️ Down Town Food Restaurant**
+
+![Downtown Restaurant Screenshot](/screenshot.png)
+
+**[Preview Project 🌍]("https://downtown-restaurant.vercel.app")**
 
 Multi-page website bundled with `vite`. 🤦 I almost forgot what it was like before UI frameworks like `Reactjs` and `the other one`.
 
